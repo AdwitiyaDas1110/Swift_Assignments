@@ -1,0 +1,16 @@
+var PrimeMinisters:[Int:String] = [1998:"Atal Bihari Bajpai", 
+								   2014:"Narendra Modi", 
+								   2004:"Manmohan Singh"]
+
+//Prime Minister of 2014
+print("The prime minister of 2014 was \(PrimeMinisters[2014]!)")
+
+//Adding Current prime Minister
+PrimeMinisters[2018] = "Narendra Modi"
+print("Current prime minister is \(PrimeMinisters[2018]!)")
+
+//Sorting the dictionary by year
+print("Dictioanry sorted by year:")
+for (key,value) in PrimeMinisters.sorted(by : {$0.key<$1.key}){
+	print("\(key) -> \(value)")
+}

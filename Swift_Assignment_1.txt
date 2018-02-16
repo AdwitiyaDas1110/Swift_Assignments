@@ -1,0 +1,53 @@
+//--------------Q1 - Inventory of Products------------//
+class Product {
+  //Properties
+  var name : String = ""
+  var price : Double = 0.0
+  var quantity : Int = 0
+  var type : String = ""
+  init(n : String, p : Double , q : Int , t : String){
+	  name = n
+	  price = p 
+	  quantity = q 
+	  type = t 
+	}
+}
+
+
+//Creating array of Products
+var Product_list =  [Product(n:"lettuce", p:10.5 , q:50, t:"Leafy green"),
+
+                Product(n:"cabbage", p:20 , q:100, t:"Cruciferous"),
+
+                Product(n:"pumpkin", p:30 , q:30, t:"Marrow"),
+
+                Product(n:"cauliflower", p:10 , q:25, t:"Cruciferous"),
+
+                Product(n:"zucchini", p:20.5 , q:50, t:"Marrow"),
+
+                Product(n:"yam", p:30 , q:50, t:"Root"),
+
+                Product(n:"spinach", p:10 , q:100, t:"Leafy green"),
+
+                Product(n:"broccoli", p:20.2 , q:75, t:"Cruciferous"),
+
+                Product(n:"Garlic", p:30 , q:20, t:"Leafy green"),
+
+                Product(n:"silverbeet", p:10 , q:50, t:"Marrow")]
+
+
+//Printing number of products in list//
+print("Number of products in list = \(Product_list.count)")
+
+
+//Adding a new product in the list and then printing the size of the list//
+Product_list += [Product(n:"Potato", p:10, q:50, t:"Root")]
+print("Number of products in list after adding a new product = \(Product_list.count)")
+
+//Printing the leafy green products of the list//
+print("The leafy green products are :")
+for prod in Product_list{
+	if prod.type == "Leafy green"{
+		print(prod.name)
+	}
+}

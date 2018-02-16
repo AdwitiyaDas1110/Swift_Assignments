@@ -1,0 +1,55 @@
+protocol Employee{
+	//properties
+	var Id : Int { get set}
+	var Name :  String { get set}
+	var Designation : String { get set}
+	var Experience_in_years : Double { get set}
+	var Annual_Salary : Double { get set}
+	var Joining_Date : String  { get set}
+	func Calculate_Salary() -> Double
+}
+
+//Class HR adopts protocol Employee
+class HR : Employee {
+	//conforming to properties of protocol Employee
+	var Id  = 1045
+	var Name = "Ram"
+	var Designation = "HR Head"
+	var Experience_in_years = 4.0
+	var Annual_Salary = 0.0
+	var Joining_Date = "10th Feb 2016"
+	var basic_salary : Double = 0.0
+	func Calculate_Salary() -> Double{
+		return Experience_in_years * 1000 + basic_salary*12
+	}
+}
+
+
+//Class Developer adopts to protocol Employee
+class Developer : Employee {
+	//conforming to properties of protocol Employee
+	var Id  = 2019
+	var Name = "Sam"
+	var Designation = "Senior Developer"
+	var Experience_in_years = 14.0
+	var Annual_Salary = 0.0
+	var Joining_Date = "17th Feb 2016"
+	var basic_salary : Double = 0.0
+	func Calculate_Salary() -> Double{
+		return Experience_in_years * 2000 + basic_salary*12
+	}
+}
+
+//Creating an object of HR class
+var HR_emp = HR()
+HR_emp.Experience_in_years = 4
+HR_emp.basic_salary = 8000
+HR_emp.Annual_Salary = HR_emp.Calculate_Salary()
+print("HR employee's annual salary = Rs.\(HR_emp.Annual_Salary)")
+
+//Creating an object of Developer class
+var Dev_emp = Developer()
+Dev_emp.Experience_in_years = 5
+Dev_emp.basic_salary = 8000
+Dev_emp.Annual_Salary = Dev_emp.Calculate_Salary()
+print("Developer employee's annual salary = Rs.\(Dev_emp.Annual_Salary)")
